@@ -1,14 +1,5 @@
 # Infrastructure as Code (IaC) for AWS EKS Cluster Provisioning using Terraform
 
-## Read the medium file for the better understanding of the project:
-[IaC for AWS EKS sluster provising using Terraform](https://carl-writes.medium.com/infrastructure-as-code-iac-for-aws-eks-cluster-provisioning-using-terraform-95ce0d0a890f)
-
-Sure, here's a simplified version of the README with the prerequisites and necessary details of the Terraform code:
-
----
-
-# AWS EKS Cluster Provisioning using Terraform
-
 This project demonstrates how to deploy and manage an AWS EKS cluster using Terraform, with S3 and DynamoDB for state management.
 
 ## Prerequisites
@@ -179,4 +170,6 @@ terraform {
     terraform destroy
     ```
 
----
+## Read the medium file for the better understanding of the project:
+[IaC for AWS EKS sluster provising using Terraform](https://carl-writes.medium.com/infrastructure-as-code-iac-for-aws-eks-cluster-provisioning-using-terraform-95ce0d0a890f)
+
