@@ -9,6 +9,10 @@ This project demonstrates how to deploy and manage an AWS EKS cluster using Terr
 - Terraform installed
 - S3 bucket and DynamoDB table for Terraform state management
 
+## Read the medium file for the better understanding of the project:
+[IaC for AWS EKS sluster provising using Terraform](https://carl-writes.medium.com/infrastructure-as-code-iac-for-aws-eks-cluster-provisioning-using-terraform-95ce0d0a890f)
+
+
 ## Necessary Details of the Terraform Script
 
 ### Provider Configuration
@@ -170,6 +174,4 @@ terraform {
     terraform destroy
     ```
 
-## Read the medium file for the better understanding of the project:
-[IaC for AWS EKS sluster provising using Terraform](https://carl-writes.medium.com/infrastructure-as-code-iac-for-aws-eks-cluster-provisioning-using-terraform-95ce0d0a890f)
 
