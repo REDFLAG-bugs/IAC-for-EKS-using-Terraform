@@ -1,6 +1,6 @@
 # Configure the AWS provider
 provider "aws" {
-  region = "us-east-1"  # Replace with your desired AWS region
+  region = "REPLACE-WITH-YOUR-AWS-REGION"
 }
 
 # Create a VPC
@@ -17,7 +17,7 @@ resource "aws_subnet" "public" {
   count             = 2
   vpc_id            = aws_vpc.main.id
   cidr_block        = cidrsubnet(aws_vpc.main.cidr_block, 8, count.index)
-  availability_zone = element(["us-east-1a", "us-east-1c"], count.index)
+  availability_zone = element(["YOUR-AWS-REGION(a)", "YOUR-AWS-REGION(c)"], count.index) #The "a" and "c" are different parts of the region
   map_public_ip_on_launch = true
 
   tags = {
@@ -30,7 +30,7 @@ resource "aws_internet_gateway" "main" {
   vpc_id = aws_vpc.main.id
 
   tags = {
-    Name = "main-igw"
+    Name = "NAME-OF-THE-Gateway-YOU-WANNA-BUILD"
   }
 }
 
@@ -39,7 +39,7 @@ resource "aws_route_table" "public" {
   vpc_id = aws_vpc.main.id
 
   route {
-    cidr_block = "0.0.0.0/0"
+    cidr_block = "0.0.0.0/0" #ENTER YOU CIDR RANGE
     gateway_id = aws_internet_gateway.main.id
   }
 
@@ -154,10 +154,10 @@ resource "aws_eks_node_group" "main" {
 # Configure the S3 Backend for Terraform State
 terraform {
   backend "s3" {
-    bucket         = "project1-my-bucket"  # Replace with your bucket name
+    bucket         = "my-bucket"  # REPLACE WITH your-bucket-name
     key            = "eks-cluster/terraform.tfstate"
-    region         = "us-east-1"
-    dynamodb_table = "terraform-lock"
+    region         = "YOUR-DESIRED-AWS-REGION"
+    dynamodb_table = "NAME-OF-THE-dynamodb_table"
     encrypt        = true
   }
 }
